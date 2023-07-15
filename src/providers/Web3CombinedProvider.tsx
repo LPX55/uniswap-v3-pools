@@ -10,6 +10,8 @@ const MainnetProvider = createWeb3ReactRoot("mainnet");
 const OptimismProvider = createWeb3ReactRoot("optimism");
 const ArbitrumProvider = createWeb3ReactRoot("arbitrum");
 const PolygonProvider = createWeb3ReactRoot("polygon");
+const EvmosProvider = createWeb3ReactRoot("evmos");
+
 const InjectWalletProvider = createWeb3ReactRoot("injected");
 
 interface Props {
@@ -25,9 +27,11 @@ function Web3CombinedProvider({ children }: Props) {
       <OptimismProvider getLibrary={getLibrary}>
         <ArbitrumProvider getLibrary={getLibrary}>
           <PolygonProvider getLibrary={getLibrary}>
+            <EvmosProvider getLibrary={getLibrary}>
             <InjectWalletProvider getLibrary={getLibrary}>
               {children}
             </InjectWalletProvider>
+            </EvmosProvider>
           </PolygonProvider>
         </ArbitrumProvider>
       </OptimismProvider>

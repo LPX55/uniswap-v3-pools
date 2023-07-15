@@ -1,5 +1,5 @@
 import { configureChains, createClient } from 'wagmi';
-import { mainnet, polygon, optimism, arbitrum } from 'wagmi/chains';
+import { mainnet, polygon, optimism, arbitrum, evmos } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc';
 import { connectorsForWallets } from '@rainbow-me/rainbowkit';
@@ -12,7 +12,7 @@ import {
 } from '@rainbow-me/rainbowkit/wallets';
 
 const { chains, provider } = configureChains(
-  [mainnet, polygon, optimism, arbitrum],
+  [mainnet, polygon, optimism, arbitrum, evmos],
   [
     jsonRpcProvider({
       rpc: (chain) => {
@@ -21,6 +21,7 @@ const { chains, provider } = configureChains(
           10: 'https://opt-mainnet.g.alchemy.com/v2/bEw3og1rC9BHAidSjH24d18OEPFnEyCC',
           42161: 'https://arb-mainnet.g.alchemy.com/v2/cduelMqriBVheVg-8kGl_1ORm9NEK6ek',
           137: 'https://polygon-mainnet.g.alchemy.com/v2/Fjjq6qMa4rJR-U4jk9KdyoAwY0pdR9KL',
+          9001: 'https://eth.bd.evmos.org:8545',
         };
 
         return {

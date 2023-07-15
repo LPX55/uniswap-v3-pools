@@ -13,6 +13,8 @@ function constructSameAddressMap(address: string): {
     10: address,
     42161: address,
     137: address,
+    9001: address,
+
   };
 }
 
@@ -97,6 +99,7 @@ export const WETH9: { [chainId: number]: Token } = {
 
   10: new Token(10, '0x4200000000000000000000000000000000000006', 18, 'WETH', 'Wrapped Ether'),
   69: new Token(69, '0x4200000000000000000000000000000000000006', 18, 'WETH', 'Wrapped Ether'),
+  9001: new Token(9001, '0xd4949664cd82660aae99bedc034a0dea8a0bd517', 18, 'WETH', 'Wrapped Evmos'),
 
   42161: new Token(
     42161,
@@ -134,6 +137,9 @@ export const WBTC: { [chainId: number]: Token } = {
 export const CRV: { [chainId: number]: Token } = {
   1: new Token(1, '0xD533a949740bb3306d119CC777fa900bA034cd52', 18, 'CRV', 'Curve DAO Token'),
 };
+export const STEVMOS: { [chainId: number]: Token } = {
+  9001: new Token(9001, '0x2c68d1d6ab986ff4640b51e1f14c716a076e44c4', 6, 'stEVMOS', 'Stride Staked Evmos'),
+};
 
 export const DEFAULT_SLIPPAGE = new Percent(50, 10_000);
 export const SWAP_SLIPPAGE = new Percent(5, 100);
@@ -145,6 +151,8 @@ export const BLOCK_EXPLORER_URL: { [key: number]: string } = {
   10: 'https://optimistic.etherscan.io',
   42161: 'https://arbiscan.io',
   137: 'https://polygonscan.com',
+  9001: 'https://escan.live',
+
 };
 
 export const ROUTES = {

@@ -10,4 +10,6 @@ export enum ChainID {
   Matic = 137,
   Optimism = 10,
   Arbitrum = 42161,
+  Evmos = 9001,
+
 }

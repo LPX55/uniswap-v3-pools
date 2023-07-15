@@ -78,7 +78,7 @@ export function useFetchPositions(
     const _call = async () => {
       setLoading(true);
 
-      const url = 'https://a988aiwz94.execute-api.us-east-2.amazonaws.com/positions';
+      const url = 'https://proxy-1-a6072859.deta.app/positions';
       const res = await fetch(url, {
         method: 'POST',
         body: JSON.stringify({ chainId, addresses, timestamp }),
@@ -149,7 +149,7 @@ export function useFetchPools(
     const _call = async () => {
       setLoading(true);
 
-      const url = 'https://a988aiwz94.execute-api.us-east-2.amazonaws.com/v2/pools';
+      const url = 'https://proxy-1-a6072859.deta.app/pools';
       const res = await fetch(url, {
         method: 'POST',
         body: JSON.stringify({ chainId, addresses }),
@@ -198,7 +198,7 @@ export function useFetchUncollectedFees(
     const _call = async () => {
       setLoading(true);
 
-      const url = 'https://a988aiwz94.execute-api.us-east-2.amazonaws.com/fees';
+      const url = 'https://proxy-1-a6072859.deta.app/fees';
       const res = await fetch(url, {
         method: 'POST',
         body: JSON.stringify({ chainId, pools }),
@@ -243,7 +243,7 @@ export function useFetchPriceFeed(
     const _call = async () => {
       setLoading(true);
 
-      const url = 'https://a988aiwz94.execute-api.us-east-2.amazonaws.com/prices';
+      const url = 'https://proxy-1-a6072859.deta.app/prices';
       const res = await fetch(url, {
         method: 'POST',
         body: JSON.stringify({ chainId, tokens }),
@@ -285,7 +285,7 @@ export function useFetchTokenBalances(
     const _call = async () => {
       setLoading(true);
 
-      const url = 'https://a988aiwz94.execute-api.us-east-2.amazonaws.com/token_balances';
+      const url = 'https://proxy-1-a6072859.deta.app/token_balances';
       const res = await fetch(url, {
         method: 'POST',
         body: JSON.stringify({ chainId, address }),

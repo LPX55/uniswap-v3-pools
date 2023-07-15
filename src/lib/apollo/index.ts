@@ -55,6 +55,17 @@ export const polygonClient = new ApolloClient({
   },
 });
 
+export const evmosClient = new ApolloClient({
+  uri: "https://subgraph.satsuma-prod.com/09c9cf3574cc/orbital-apes/v3-subgraph",
+  cache: new InMemoryCache(),
+  queryDeduplication: false,
+  defaultOptions: {
+    watchQuery: {
+      fetchPolicy: "cache-and-network",
+    },
+  },
+});
+
 export const perpOptimClient = new ApolloClient({
   uri: "https://api.thegraph.com/subgraphs/name/perpetual-protocol/perpetual-v2-optimism",
   cache: new InMemoryCache(),
@@ -83,6 +94,14 @@ export function getPerpClient(chainId: number) {
   };
 
   return clients[chainId] || perpOptimClient;
+}
+
+export function getEvmosClient(chainId: number) {
+  const clients: { [key: number]: any } = {
+    9001: evmosClient,
+  };
+
+  return clients[chainId] || evmosClient;
 }
 
 export const healthClient = new ApolloClient({
