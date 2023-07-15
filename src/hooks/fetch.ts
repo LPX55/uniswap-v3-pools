@@ -285,11 +285,17 @@ export function useFetchTokenBalances(
     const _call = async () => {
       setLoading(true);
 
-      const url = 'https://proxy-1-a6072859.deta.app/token_balances';
-      const res = await fetch(url, {
+
+        let url = 'https://proxy-1-a6072859.deta.app/token_balances';
+        if (chainId === 9001) {
+          url = 'https://proxy-2-a6072859.deta.app/09c9cf3574cc/orbital-apes/v3-subgraph/token_balances';
+        }
+        
+        const res = await fetch(url, {
         method: 'POST',
         body: JSON.stringify({ chainId, address }),
       });
+
       if (!res.ok) {
         const errors = await res.json();
         console.error(errors);

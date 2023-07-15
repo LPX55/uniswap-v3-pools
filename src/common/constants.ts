@@ -140,6 +140,9 @@ export const CRV: { [chainId: number]: Token } = {
 export const STEVMOS: { [chainId: number]: Token } = {
   9001: new Token(9001, '0x2c68d1d6ab986ff4640b51e1f14c716a076e44c4', 6, 'stEVMOS', 'Stride Staked Evmos'),
 };
+export const WEVMOS: { [chainId: number]: Token } = {
+  9001: new Token(9001, '0xd4949664cd82660aae99bedc034a0dea8a0bd517', 18, 'WEVMOS', 'Wrapped Evmos'),
+};
 
 export const DEFAULT_SLIPPAGE = new Percent(50, 10_000);
 export const SWAP_SLIPPAGE = new Percent(5, 100);

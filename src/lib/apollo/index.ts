@@ -56,7 +56,7 @@ export const polygonClient = new ApolloClient({
 });
 
 export const evmosClient = new ApolloClient({
-  uri: "https://subgraph.satsuma-prod.com/09c9cf3574cc/orbital-apes/v3-subgraph",
+  uri: "https://proxy-2-a6072859.deta.app/09c9cf3574cc/orbital-apes/v3-subgraph/api",
   cache: new InMemoryCache(),
   queryDeduplication: false,
   defaultOptions: {

@@ -36,12 +36,14 @@ export const CombinedTokensProvider = ({ children }: Props) => {
     useTokensForNetwork(ChainID.Optimism);
   const { loading: arbitrumLoading, tokens: arbitrumTokens } =
     useTokensForNetwork(ChainID.Arbitrum);
+  const { loading: evmosLoading, tokens: evmosTokens } =
+  useTokensForNetwork(ChainID.Evmos);
 
   const loading = useMemo(() => {
     return (
-      mainnetLoading || polygonLoading || optimismLoading || arbitrumLoading
+      mainnetLoading || polygonLoading || optimismLoading || arbitrumLoading || evmosLoading
     );
-  }, [mainnetLoading, polygonLoading, optimismLoading, arbitrumLoading]);
+  }, [mainnetLoading, polygonLoading, optimismLoading, arbitrumLoading, evmosLoading]);
 
   const [refreshingTokenAddresses, setRefreshingTokenAddresses] = useState<
     string[]
@@ -57,6 +59,8 @@ export const CombinedTokensProvider = ({ children }: Props) => {
       ...polygonTokens,
       ...optimismTokens,
       ...arbitrumTokens,
+      ...evmosTokens,
+
     ]
       .map((token) => {
         const priceTick = priceFeed[token.address];
@@ -74,6 +78,7 @@ export const CombinedTokensProvider = ({ children }: Props) => {
     polygonTokens,
     optimismTokens,
     arbitrumTokens,
+    evmosTokens,
     convertToGlobal,
     priceFeed,
   ]);

@@ -11,6 +11,8 @@ import {
   WMATIC,
   WBTC,
   CRV,
+  STEVMOS,
+  WEVMOS,
 } from "../common/constants";
 import MaticNativeCurrency from "./matic";
 
@@ -36,6 +38,7 @@ export function getQuoteAndBaseToken(
     WMATIC[chainId],
     WBTC[chainId],
     CRV[chainId],
+    STEVMOS[chainId],
   ];
 
   for (let i = 0; i < baseCurrencies.length; i++) {
